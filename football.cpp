@@ -1,34 +1,27 @@
 // 96A-Football
-
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
   string s;
   cin>>s;
-  int ans=0;
+  int a=0, z=0, flag=0;
   for(int i=0; i<s.size(); i++){
-    int cnt=0;
-    if(s[i]=='0'){
-      while (s[i]=='0' && i<s.size())
-      {
-        cnt++;
-        i++;
-      }
-      
+    if(s[i]=='1'){
+      a++;
+      z=0;
     }else{
-      while (s[i]=='1' && i<s.size())
-      {
-        cnt++;
-        i++;
-      }
+      z++;
+      a=0;
     }
-    if(cnt>=7)ans=1;
-    i--;
-  }if (ans==1)
-    cout<<"Yes" <<endl;
-   else
-    cout<<"NO";
-    return 0;
+    if(a==7 || z==7){
+      flag=1;
+      break;
+    }
+  }
+  if(flag)cout<<"YES" <<endl;
+  else cout<<"NO"<<endl;
+  return 0;
 
 }
