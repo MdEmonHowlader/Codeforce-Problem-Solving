@@ -1,17 +1,14 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main(){
+int main()
+{
     int t;
-    cin>>t;
-    while(t--){
-        long long a,b;
-        cin>>a>>b;
-        if(a%b==0){
-            cout<<a<<endl;
-        }else{
-            cout<<b-(a%b)<<endl;
-        }
+    cin >> t;
+    while (t--)
+    {
+        long long a, b;
+        cin >> a >> b;
+        cout << (a % b == 0 ? 0 : b - (a % b)) << endl;
     }
-return 0;
-
+    return 0;
 }
